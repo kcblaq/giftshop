@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, Grid, Switch, Typography } from "@mui/material";
+import { Button, Card, Container, Grid, Switch, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { red, green, blue, grey } from "@mui/material/colors";
 import { makeStyles } from "@material-ui/core";
@@ -15,6 +15,8 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import LightModeSharpIcon from "@mui/icons-material/LightModeSharp";
 import { StylesProvider } from "@material-ui/core/styles";
 import "./Home.css"
+import Banner from './Banner';
+import Cardy from "./Cardy"
 
 const CustomButton = styled("Button")((theme) => ({
   color: "#002D50",
@@ -68,6 +70,11 @@ const useStyles = makeStyles((theme) => ({
       color: "green",
       fontSize: 10,
     },
+  },
+  down:{
+    backgroundColor:'#F3F3F3',
+    minHeight: '100vh'
+
   },
   title: {
     fontFamily: "IBM Plex Serif !important",
@@ -209,6 +216,8 @@ export default function Home() {
               fontSize: 16,
               fontFamily: "Noto Sans !important",
               display:'flex',
+
+
               flexWrap:'wrap',
               position:'relative',
               // width:'30rem',
@@ -231,11 +240,15 @@ export default function Home() {
           </Container>
         </Box>
       </Root>
-      <SecondLayer/>
+      {/* <SecondLayer/> */}
       <Link to="gift"> Lets go to gift </Link>
       <Link to="store"> Lets go to store </Link>
-
-      {/* <MyDemo/> */}
+      <Box className={classes.down}>
+            <Banner title="Shop your favourites with custom discounts" p="Shop exclusives with only the best bargains, just for you."  />
+      <Cardy/>
+      </Box >
+          
+     
     </>
   );
 }
