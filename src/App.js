@@ -8,6 +8,7 @@ import Gift from "./components/gift/Gift";
 import Store from './components/store/Store';
 import Redeem from './components/redeem/Redeem';
 import Abstract from './components/Abstract';
+import Footer from './components/Footer';
 
 
 
@@ -23,7 +24,7 @@ function App() {
   <Route path="/" element={<Home/>} />
   <Route path="abstract" element={<Abstract/>} />
 </Routes>
-
+<Footer/>
   </Router>
   )
 }

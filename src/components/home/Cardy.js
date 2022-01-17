@@ -9,6 +9,7 @@ import bgcard3 from "../../assets/bgcard3.png";
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 
+
 const useStyles = makeStyles(theme =>({
     text:{
         color:'#101010',

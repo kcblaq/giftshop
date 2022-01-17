@@ -17,6 +17,7 @@ import { StylesProvider } from "@material-ui/core/styles";
 import "./Home.css"
 import Banner from './Banner';
 import Cardy from "./Cardy"
+import BeforeFooter from "./BeforeFooter";
 
 const CustomButton = styled("Button")((theme) => ({
   color: "#002D50",
@@ -246,6 +247,8 @@ export default function Home() {
       <Box className={classes.down}>
             <Banner title="Shop your favourites with custom discounts" p="Shop exclusives with only the best bargains, just for you."  />
       <Cardy/>
+      <BeforeFooter/>
+      
       </Box >
           
      

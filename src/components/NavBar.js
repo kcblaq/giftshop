@@ -57,6 +57,12 @@ const useStyles = makeStyles((theme) => ({
   // marginLeft:'10px !importance'
   [theme.breakpoints.down('sm')]:{
     fontSize: '0.3rem'
+  },
+  '&:hover': {
+    color:'red',
+  },
+  '&::active': {
+    color:'red'
   }
 
   },
