@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Card, Container, Typography, Grid } from "@mui/material";
+import { Box, Card, Typography, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { makeStyles } from "@material-ui/core";
 import bgcard from "../../assets/bgcard.png";
@@ -7,6 +7,7 @@ import bgcard1 from "../../assets/bgcard1.png";
 import bgcard2 from "../../assets/bgcard2.png";
 import bgcard3 from "../../assets/bgcard3.png";
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { Flex } from "design-system";
 
 
 
@@ -49,32 +50,30 @@ alignItems:'center',
 borderRadius:'5px'
 }))
 
-export default function Cardy() {
+export default function CardComponent() {
     const classes = useStyles();
   return (
-<Grid container columns={{ xs: 4,sm:4, md: 12 }} className={classes.cards}>
+<Flex sx={{flexDirection:'row', overflow:'scroll', width:'100%',  backgroundColor:'#F3F3F3'}}>
     {data.map(function(item){
         return (
 
        
         
-        <Box sx={{ padding: 4, mt: 6 }}>
+        <Box key={item.bg} sx={{ padding: 4, mt: 6 }}>
       <Card
         sx={{
             backgroundImage: `url(${item.bg})`,
-            maxWidth: "310px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            paddingTop: "300px",
-            paddingBottom: '15px',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            pt: "300px",
+            pb: '15px',
+            px:'15px',
+            minWidth: 250
             
         }}
         >
         <Typography sx={{backgroundColor:"#ffffff",border:'1px solid #fff', padding:'15px', borderRadius:'5px'}} >Buy</Typography>
-        {/* <FavoriteOutlinedIcon sx={{color:'#ffffff',border:'1px solid #fff', padding:'1px', }}/> */}
         <Hearty >
             <FavoriteOutlinedIcon sx={{color:'#fff'}}/>
         </Hearty >
@@ -85,7 +84,7 @@ export default function Cardy() {
     </Box>
     
     )})} 
-</Grid>
+</Flex>
 
     
   );

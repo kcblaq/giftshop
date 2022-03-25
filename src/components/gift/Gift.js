@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Link } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 
-import './gift.css'
 
 
 const useStyles = makeStyles((theme)=>({
