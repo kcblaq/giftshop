@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function Index(props) {
+export default function Index({toggleMode}) {
 	const classes = useStyles();
 	let texts = (
 		<Typography variant="h3" sx={{ position: 'relative' }}>
@@ -85,7 +85,7 @@ export default function Index(props) {
 				}}>
 				<Flex sx={{ alignItems: 'center', justifyContent: 'flex-end' }}>
 					<LightModeRounded />
-					<Switch onChange={props.toggleMode} />
+					<Switch onChange={toggleMode} />
 					<NightlightRoundRounded sx={{ transform: 'rotate(-40deg)' }} />
 				</Flex>
 
@@ -123,8 +123,8 @@ export default function Index(props) {
 							sm: 'none',
 							xs: 'none',
 							md: 'flex',
-							justifyContent: 'center',
 						},
+						justifyContent: 'center',
 					}}>
 					<img src={Logo} alt=" Giftshop Logo" />
 				</Flex>
@@ -134,21 +134,21 @@ export default function Index(props) {
 						justifyContent: 'space-around',
 						alignItems: 'center',
 					}}>
-					<Typography sx={{ color: 'primary.dark' }}>
+					<Typography sx={{ color: 'primary.dark',fontWeight:700,fontSize:37 }}>
 						{' '}
 						Redeem{' '}
 						<span style={{ color: 'red', fontSize: 57, borderRadius: '50%' }}>
 							.
 						</span>{' '}
 					</Typography>
-					<Typography sx={{ color: 'primary.dark' }}>
+					<Typography sx={{ color: 'primary.dark',fontWeight:700,fontSize:37 }}>
 						{' '}
 						Shop
 						<span style={{ color: 'red', fontSize: 57, borderRadius: '50%' }}>
 							.
 						</span>{' '}
 					</Typography>
-					<Typography sx={{ color: 'primary.dark' }}>
+					<Typography sx={{ color: 'primary.dark',fontWeight:700,fontSize:37 }}>
 						{' '}
 						Echo{' '}
 						<span style={{ color: 'red', fontSize: 57, borderRadius: '50%' }}>
@@ -158,26 +158,26 @@ export default function Index(props) {
 				</Flex>
 				<Flex
 					sx={{
-						flexDirection: 'row',
-						overflowX: 'scroll',
-						paddingLeft: 2,
-						justifyContent: 'space-around',
-						alignItems: 'center',
+						
+						overflow: 'scroll',
+						alignItems:'center',
+						padding:2,
 					}}>
-					<img src={Redeem} alt="redeem" />
-					<img src={shop} alt="shop" />
-					<img src={echo} alt="echo" />
+					<Flex sx={{justifyContent: 'space-around'}}> <img src={Redeem} alt="redeem" /></Flex>
+					<Flex sx={{justifyContent: 'space-around'}}> <img src={shop} alt="shop" /> </Flex>
+					<Flex sx={{justifyContent: 'space-around'}}> <img src={echo} alt="echo" /> </Flex>
+					
 				</Flex>
-				<Flex sx={{ flexDirection: 'row', overflowX: 'scroll', py: 6 }}>
-					<Typography sx={{ textAlign: 'center', minWidth: 300 }}>
+				<Flex sx={{ justifyContent:'space-around',overflow: 'scroll', p: 4 }}>
+					<Typography sx={{ textAlign: 'center', minWidth: 200, maxWidth:300 }}>
 						Giftshop Africa helps brands with loyalty program as well as help
 						individuals get gift ideas for their loved ones.
 					</Typography>
-					<Typography sx={{ textAlign: 'center', minWidth: 300 }}>
+					<Typography sx={{ textAlign: 'center', minWidth: 200, maxWidth:300 }}>
 						Giftshop Africa helps brands with loyalty program as well as help
 						individuals get gift ideas for their loved ones.
 					</Typography>
-					<Typography sx={{ textAlign: 'center', minWidth: 300 }}>
+					<Typography sx={{ textAlign: 'center', minWidth: 200, maxWidth:300 }}>
 						Giftshop Africa helps brands with loyalty program as well as help
 						individuals get gift ideas for their loved ones.
 					</Typography>

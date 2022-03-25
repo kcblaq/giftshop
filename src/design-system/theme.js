@@ -13,28 +13,7 @@ let theme = createTheme({
         secondary:{
             main:'#FFD7D7'
         },
-        mode: {
-            light:{
-        primary: amber,
-          divider: amber[200],
-          text: {
-            primary: grey[900],
-            secondary: grey[800],
-            }
-        } ,
-        dark:{
-            primary: deepOrange,
-            divider: deepOrange[700],
-            background: {
-              default: deepOrange[900],
-              paper: deepOrange[900],
-            },
-            text: {
-              primary: '#fff',
-              secondary: grey[500]
-            },
-          },
-        }
+        mode: 'light'
     },
    
     components:{

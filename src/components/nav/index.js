@@ -6,15 +6,19 @@ import {
 	AccountCircleOutlined,
 	LocalMallOutlined,
 	MenuOutlined,
+	Menu,
 } from '@mui/icons-material';
-import { makeStyles } from '@mui/styles';
-import { Badge } from '@mui/material';
+import { makeStyles, styled } from '@mui/styles';
+import { Badge, Typography } from '@mui/material';
 
 const useStyles = makeStyles({
 	hover: {
 		'&:hover': {
 			textDecoration: 'none',
 		},
+	},
+	link: {
+		cursor:'pointer'
 	},
 });
 
@@ -39,7 +43,9 @@ function CustomLink({ children, to, ...props }) {
 	);
 }
 
+
 export default function Nav(...props) {
+	const classes = useStyles();
 	return (
 		<Flex
 			sx={{
@@ -50,6 +56,25 @@ export default function Nav(...props) {
 				width: '100vw',
 				backgroundImage: `url(${Bg})`,
 			}}>
+			<Flex
+				sx={{
+					justifyContent: 'space-between',
+					alignItems: 'center',
+					height: 50,
+					width: '100vw',
+					backgroundImage: `url(${Bg})`,
+					display: { sm: 'flex', xs: 'flex', md: 'none', lg: 'none' },
+					color: 'primary.light',
+					padding: 2,
+				}}>
+				<Menu  className={classes.link} />
+				<Typography sx={{ fontWeight: 700 }}> GIFTSHOP AFRICA </Typography>
+				<NavLink to="#">
+					<Badge badgeContent={0} color="error" showZero>
+						<LocalMallOutlined />
+					</Badge>
+				</NavLink>
+			</Flex>
 			<Flex
 				sx={{
 					justifyContent: 'space-between',
@@ -69,15 +94,15 @@ export default function Nav(...props) {
 					display: { sm: 'none', xs: 'none', md: 'flex' },
 				}}>
 				<NavLink to="#">
-					<AccountCircleOutlined  />
+					<AccountCircleOutlined />
 				</NavLink>
 				<NavLink to="#">
-					<Badge badgeContent={0} color='error' showZero >
-					<LocalMallOutlined  />
+					<Badge badgeContent={0} color="error" showZero>
+						<LocalMallOutlined />
 					</Badge>
 				</NavLink>
 				<NavLink to="#">
-					<MenuOutlined  />
+					<MenuOutlined />
 				</NavLink>
 			</Flex>
 		</Flex>
